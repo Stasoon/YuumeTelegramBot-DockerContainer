@@ -9,7 +9,7 @@ app.listen(80)
 
 
 const mongoose = require('mongoose') // база данных MongoDB
-const User = require('./models/users') // експорт модель базы данных
+const User = require('./models/users') // экспорт модель базы данных
 
 // подключаем Dotenv.
 require('dotenv').config();
