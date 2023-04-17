@@ -1,10 +1,14 @@
+const registation_link = 'https://1wwxnj.top/?open=register'
+const chat_link = 'https://t.me/+qkRUSkRNSt82NzBi'
+const contact_link = 'https://t.me/DakoUps'
+
 const keyboard = {
     start: [
         [
             {
                 text: `✅ ПОДПИСАТЬСЯ НА КАНАЛ  ✅`,
                 callback_data: 'chat_link',
-                url: 'https://t.me/+qkRUSkRNSt82NzBi'
+                url: chat_link
             }
         ],
         [
@@ -67,7 +71,7 @@ const keyboard = {
             {
                 text: `ПРИСЛАТЬ ID ✅`, // `💹 СОЗДАТЬ АККАУНТ 💹`
                 callback_data: 'send_id',  
-                url: 'https://t.me/DakoUps'
+                url: contact_link
             }
         ],
     ],
@@ -76,7 +80,7 @@ const keyboard = {
             {
                 text: `РЕГИСТРАЦИЯ 📲`,
                 callback_data: 'account_created',
-                url: 'https://1wwxnj.top/?open=register',
+                url: registation_link,
             }
         ],
         [
