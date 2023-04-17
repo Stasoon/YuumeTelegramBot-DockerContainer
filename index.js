@@ -2,6 +2,12 @@ const TelegramAPI = require('node-telegram-bot-api') // фреймворк дл�
 const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
 
+
+const express = require('express');
+const app = express();
+app.listen(80)
+
+
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // експорт модель базы данных
 

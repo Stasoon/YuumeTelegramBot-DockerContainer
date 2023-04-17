@@ -7,5 +7,5 @@ RUN yarn install
 
 COPY . .
 
-EXPOSE 443/tcp
+EXPOSE 80/tcp
 CMD [ "node", "index.js" ]
