@@ -65,7 +65,7 @@ bot.onText(/\/start/, msg => {
 // исходя за значением data, будем выбирать что и отправлять
 
 bot.on('callback_query', query => {
-    bot.answerCallbackQuery()
+    bot.answerCallbackQuery(query.id)
 
     const ChatId = query.message.chat.id;
     const messageId = query.message.message_id;
