@@ -135,7 +135,8 @@ bot.on('callback_query', query => {
 
 
 adm.onText(/\/start/, msg => {
-    adm.sendMessage(msg.chat.id, 'привет, админ!')
+    adm.sendMessage(msg.chat.id, 'привет, админ!');
+    console.log('РАААААБООООТАААЕЕЕЕЕТ ЭТОТ БОТ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 }
 
 
