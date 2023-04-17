@@ -1,12 +1,11 @@
-FROM node:latest
+FROM node:14
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY packaje.json ./
+COPY package*.json ./
 RUN yarn install
 
-COPY . /usr/src/app
+COPY . .
 
-CMD ["node", "index.js"]
 EXPOSE 80/tcp
+CMD [ "node", "index.js" ]
