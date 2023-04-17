@@ -14,8 +14,8 @@ const User = require('./models/users') // экспорт модель базы �
 // подключаем Dotenv.
 require('dotenv').config();
 
-let NameButton = 'Button'
-let LinkButton = 'https://t.me/nabilllat'
+let NameButton = 'Кнопка'
+let LinkButton = 'https://t.me/DakoUps'
 
 const bot = new TelegramAPI(process.env.KEY, { polling: true})
 const adm = new TelegramAPI(process.env.KEY2, { polling: true})
