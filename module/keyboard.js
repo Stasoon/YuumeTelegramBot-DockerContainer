@@ -1,6 +1,4 @@
-const registation_link = 'https://1wwxnj.top/?open=register'
-const chat_link = 'https://t.me/+qkRUSkRNSt82NzBi'
-const contact_link = 'https://t.me/DakoUps'
+const links =  require ('../links.js')
 
 const keyboard = {
     start: [
@@ -8,7 +6,7 @@ const keyboard = {
             {
                 text: `✅ ПОДПИСАТЬСЯ НА КАНАЛ  ✅`,
                 callback_data: 'chat_link',
-                url: chat_link
+                url: links.chat_link
             }
         ],
         [
@@ -71,7 +69,7 @@ const keyboard = {
             {
                 text: `ПРИСЛАТЬ ID ✅`, // `💹 СОЗДАТЬ АККАУНТ 💹`
                 callback_data: 'send_id',  
-                url: contact_link
+                url: links.contact_link
             }
         ],
     ],
@@ -80,7 +78,7 @@ const keyboard = {
             {
                 text: `РЕГИСТРАЦИЯ 📲`,
                 callback_data: 'account_created',
-                url: registation_link,
+                url: links.registation_link,
             }
         ],
         [
