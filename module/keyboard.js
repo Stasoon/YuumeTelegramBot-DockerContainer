@@ -3,7 +3,7 @@ const keyboard = {
         [
             {
                 text: `✅ ПОДПИСАТЬСЯ НА КАНАЛ  ✅`,
-                callback_data: 'link2',
+                callback_data: 'chat_link',
                 url: 'https://t.me/+qkRUSkRNSt82NzBi'
             }
         ],
@@ -72,6 +72,13 @@ const keyboard = {
         ],
     ],
     have_acc:[
+        [
+            {
+                text: `РЕГИСТРАЦИЯ 📲`,
+                callback_data: 'account_created',
+                url: 'https://1wwxnj.top/?open=register',
+            }
+        ],
         [
             {
                 text: `СОЗДАЛ АККАУНТ ☑️`,
