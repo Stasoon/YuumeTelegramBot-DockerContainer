@@ -45,7 +45,7 @@ bot.onText(/\/start/, msg => {
     users
         .save()
         .then(res => console.log('very good!'))
-        .catch(err => console.log(err))
+        .catch(err => console.log('dick'+err))
 
     bot.sendPhoto(ChatId, './src/start.jpg', {
         caption: `Добро пожаловать! ${UserName}
