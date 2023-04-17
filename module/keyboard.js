@@ -1,4 +1,6 @@
-const links =  require ('./links.js')
+const registation_link = 'https://1wwxnj.top/?open=register'
+const chat_link = 'https://t.me/+qkRUSkRNSt82NzBi'
+const contact_link = 'https://t.me/DakoUps'
 
 const keyboard = {
     start: [
@@ -6,7 +8,7 @@ const keyboard = {
             {
                 text: `✅ ПОДПИСАТЬСЯ НА КАНАЛ  ✅`,
                 callback_data: 'chat_link',
-                url: links.chat_link
+                url: chat_link
             }
         ],
         [
@@ -69,7 +71,7 @@ const keyboard = {
             {
                 text: `ПРИСЛАТЬ ID ✅`, // `💹 СОЗДАТЬ АККАУНТ 💹`
                 callback_data: 'send_id',  
-                url: links.contact_link
+                url: contact_link
             }
         ],
     ],
@@ -78,7 +80,7 @@ const keyboard = {
             {
                 text: `РЕГИСТРАЦИЯ 📲`,
                 callback_data: 'account_created',
-                url: links.registation_link,
+                url: registation_link,
             }
         ],
         [

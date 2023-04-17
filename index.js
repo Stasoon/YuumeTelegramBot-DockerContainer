@@ -33,7 +33,6 @@ mongoose
 // Обработка команды start
 // а также сбор информации и отправка в базу данных
 bot.onText(/\/start/, msg => {
-    
     // переменная для хранение айдишника чата.
     const ChatId = msg.chat.id;
     // переменная для хранение имени пользователя.
@@ -44,8 +43,8 @@ bot.onText(/\/start/, msg => {
     const users = new User({ChatId, UserName});
     users
         .save()
-        .then(res => console.log('very good! model created'))
-        .catch(err => console.log('Error! Can not create model!\n'+err))
+        .then(res => console.log('User added'))
+        .catch(err => console.log('Error! Can not create user!!\n'+err))
 
     bot.sendPhoto(ChatId, './src/start.jpg', {
         caption: `Добро пожаловать! ${UserName}
