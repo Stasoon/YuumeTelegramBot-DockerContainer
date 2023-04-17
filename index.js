@@ -26,7 +26,7 @@ let iComm = 0;
 // подключение к базе данных, в случае ошибки выводим в консоль.
 mongoose
     .connect(process.env.TOKENBD, {useNewUrlParser: true, useUnifiedTopology: true}) 
-    .then((res) => console.log('Connection to DataBase...'))  // успех.
+    .then((res) => console.log('Success! DB connected'))  // успех.
     .catch( err => console.log(err)); // ошибка.
 
 
@@ -44,8 +44,8 @@ bot.onText(/\/start/, msg => {
     const users = new User({ChatId, UserName});
     users
         .save()
-        .then(res => console.log('very good!'))
-        .catch(err => console.log('dick'+err))
+        .then(res => console.log('very good! model created'))
+        .catch(err => console.log('Error! Can not create model!\n'+err))
 
     bot.sendPhoto(ChatId, './src/start.jpg', {
         caption: `Добро пожаловать! ${UserName}
