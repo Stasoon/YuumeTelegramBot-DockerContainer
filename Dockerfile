@@ -7,4 +7,6 @@ RUN yarn install
 
 COPY . .
 
+EXPOSE 3000/tcp
+EXPOSE 5000/tcp
 CMD [ "node", "index.js" ]
