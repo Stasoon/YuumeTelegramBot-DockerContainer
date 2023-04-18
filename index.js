@@ -1,3 +1,5 @@
+// подключаем Dotenv.
+require('dotenv').config();
 process.env.NTBA_FIX_319 = 1
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
@@ -12,8 +14,6 @@ app.listen(80)
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
-// подключаем Dotenv.
-require('dotenv').config();
 
 let NameButton = 'Кнопка'
 let LinkButton = 'https://t.me/DakoUps'
