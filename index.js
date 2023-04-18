@@ -11,16 +11,15 @@ const User = require('./models/users') // экспорт модель базы �
 
 
 // дрес сервера, на котором хостится бот
-const SERVER_URL = `https://yuumetgbot-dinokingtv.b4a.run`
-// const SERVER_URL = `https://testtt-z43z.onrender.com`
+const SERVER_URL = process.env.SERVER_URL
 
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
-bot.setWebHook(WEBHOOK_URL`${SERVER_URL}/webhook/${process.env.KEY}`)
+bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 // бот для админа + привязка вебхука
 const adm = new TelegramAPI(process.env.KEY2, { polling: false, webHook: {port: 5000} })
-bot.setWebHook(WEBHOOK_URL`${SERVER_URL}/webhook/${process.env.KEY2}`)
+bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
 
 // вспомогательная переменная для отправка фотографий.
 let iComm = 0;
