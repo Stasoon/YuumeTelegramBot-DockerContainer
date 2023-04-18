@@ -6,23 +6,27 @@ const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
 
 
-const express = require('express');
-const app = express();
-app.listen(80)
-
-
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
 
-let NameButton = 'Кнопка'
-let LinkButton = 'https://t.me/DakoUps'
+// дрес сервера, на котором хостится бот
+const SERVER_URL = `https://testtt-z43z.onrender.com`
 
-const bot = new TelegramAPI(process.env.KEY, { polling: true})
-const adm = new TelegramAPI(process.env.KEY2, { polling: true})
+// бот для пользователей + привязка вебхука
+const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
+bot.setWebHook(WEBHOOK_URL`${SERVER_URL}/webhook/${process.env.KEY}`)
+
+// бот для админа + привязка вебхука
+const adm = new TelegramAPI(process.env.KEY2, { polling: false, webHook: {port: 5000} })
+bot.setWebHook(WEBHOOK_URL`${SERVER_URL}/webhook/${process.env.KEY2}`)
 
 // вспомогательная переменная для отправка фотографий.
 let iComm = 0;
+
+// переменные для хранения инфо о рассылке
+let NameButton = 'Кнопка'
+let LinkButton = 'https://t.me/DakoUps'
 
 // подключение к базе данных, в случае ошибки выводим в консоль.
 mongoose
