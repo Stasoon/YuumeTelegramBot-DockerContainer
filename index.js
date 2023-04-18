@@ -11,7 +11,8 @@ const User = require('./models/users') // экспорт модель базы �
 
 
 // дрес сервера, на котором хостится бот
-const SERVER_URL = `https://testtt-z43z.onrender.com`
+const SERVER_URL = `https://yuumetgbot-dinokingtv.b4a.run`
+// const SERVER_URL = `https://testtt-z43z.onrender.com`
 
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
