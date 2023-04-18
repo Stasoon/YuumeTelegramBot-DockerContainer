@@ -16,11 +16,13 @@ const SERVER_URL = `https://yuumetgbot.onrender.com`
 
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000}, ip_address: '3.75.158.163' })
+bot.remove_webhook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 // бот для админа + привязка вебхука
 const adm = new TelegramAPI(process.env.KEY2, { polling: false, webHook: {port: 5000}, ip_address:'3.125.183.140' })
-// bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
+adm.remove_webhook()
+bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
 
 
 
