@@ -18,12 +18,6 @@ const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3
 bot.deleteWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
-// бот для админа + привязка вебхука
-const adm = new TelegramAPI(process.env.KEY2, { polling: false })
-// adm.deleteWebHook()
-// bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
-
-
 
 // вспомогательная переменная для отправка фотографий.
 let iComm = 0;
@@ -140,7 +134,7 @@ bot.on('callback_query', query => {
 // принимаем команду, обрабатываем текст и ссылку на фотографию
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
-adm.onText(/\/postphoto/, async msg => {
+bot.onText(/\/ADMINpostphoto/, async msg => {
 
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
@@ -177,7 +171,7 @@ adm.onText(/\/postphoto/, async msg => {
 // принимаем команду, обрабатываем текст и ссылку на видео
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
-adm.onText(/\/postvideo/, async msg => {
+bot.onText(/\/ADMINpostvideo/, async msg => {
 
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
@@ -214,7 +208,7 @@ adm.onText(/\/postvideo/, async msg => {
 // принимаем команду, затем обрабатываем только текст
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
-adm.onText(/\/posttext/, async msg => {
+bot.onText(/\/ADMINposttext/, async msg => {
     
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(1).join(" ");
@@ -243,28 +237,28 @@ adm.onText(/\/posttext/, async msg => {
 
 })
 
-adm.onText(/\/namebutton/, async msg => {
+bot.onText(/\/ADMINnamebutton/, async msg => {
     NameButton = msg.text.split(" ").slice(1,2).join(" ");
     
     const ChatId = msg.chat.id;
 
-    adm.sendMessage(ChatId, `name button: ${NameButton}`, {
+    bot.sendMessage(ChatId, `name button: ${NameButton}`, {
         parse_mode: 'HTML',
     })
     
 })
 
-adm.onText(/\/linkbutton/, async msg => {
+bot.onText(/\/linkbutton/, async msg => {
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
 
     const ChatId = msg.chat.id;
 
-    adm.sendMessage(ChatId, `link button: ${LinkButton}`, {
+    bot.sendMessage(ChatId, `link button: ${LinkButton}`, {
         parse_mode: 'HTML',
     })
 })
 
-adm.onText(/\/nbtnposttext/, async msg => {
+bot.onText(/\/ADMINnbtnposttext/, async msg => {
     
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(1).join(" ");
@@ -281,7 +275,7 @@ adm.onText(/\/nbtnposttext/, async msg => {
     }
 })
 
-adm.onText(/\/nbtnpostphoto/, async msg => {
+bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
@@ -301,14 +295,11 @@ adm.onText(/\/nbtnpostphoto/, async msg => {
 })
 
 
-adm.onText(/\/users/, async msg => {
+bot.onText(/\/ADMINusers/, async msg => {
     const ChatId = msg.chat.id;
-    const log = await User.find( { }, { UserName: 1, _id: 0 } );
+    const log = await User.find( { }, { ChatId: 1, _id: 0 } );
 
-    adm.sendMessage(ChatId, `name button: ${NameButton}`, {
-        parse_mode: 'HTML',
-    })
-    adm.sendMessage(ChatId, `\nВсего: ${log.length} пользователей.`, {
+    bot.sendMessage(ChatId, `Ботом воспользовалиось ${log.length} человек.`, {
         parse_mode: 'HTML',
     })
 })
