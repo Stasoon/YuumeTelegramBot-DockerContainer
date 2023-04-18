@@ -19,7 +19,7 @@ bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 // бот для админа + привязка вебхука
 const adm = new TelegramAPI(process.env.KEY2, { polling: false, webHook: {port: 5000} })
-bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
+// bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY2}`)
 
 // вспомогательная переменная для отправка фотографий.
 let iComm = 0;
