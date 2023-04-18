@@ -1,6 +1,5 @@
 // подключаем Dotenv.
 require('dotenv').config();
-process.env.NTBA_FIX_319 = 1
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
