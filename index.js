@@ -1,3 +1,4 @@
+process.env.NTBA_FIX_319 = 1
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
@@ -289,4 +290,17 @@ adm.onText(/\/nbtnpostphoto/, async msg => {
             parse_mode: 'HTML',
         })        
     }
+})
+
+
+adm.onText(/\/users/, async msg => {
+    const ChatId = msg.chat.id;
+    const log = await User.find( { }, { UserName: 1, _id: 0 } );
+
+    adm.sendMessage(ChatId, `name button: ${NameButton}`, {
+        parse_mode: 'HTML',
+    })
+    adm.sendMessage(ChatId, `\nВсего: ${log.length} пользователей.`, {
+        parse_mode: 'HTML',
+    })
 })
