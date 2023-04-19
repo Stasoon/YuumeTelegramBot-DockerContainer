@@ -1,17 +1,16 @@
-process.env.NTBA_FIX_319 = 1;
 // подключаем Dotenv.
 require('dotenv').config();
+process.env.NTBA_FIX_319 = 1;
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
 
 
-const express = require('express')
-
-const app = express()
-app.get('/health', (req, res) => {
-  res.sendStatus(200)
-})
+// const express = require('express')
+// const app = express()
+// app.get('/health', (req, res) => {
+//   res.sendStatus(200)
+// })
 
 
 const mongoose = require('mongoose') // база данных MongoDB
