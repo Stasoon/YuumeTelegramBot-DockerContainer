@@ -6,6 +6,14 @@ const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
 
 
+const express = require('express')
+
+const app = express()
+sapp.get('/health', (req, res) => {
+  res.sendStatus(200)
+})
+
+
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
