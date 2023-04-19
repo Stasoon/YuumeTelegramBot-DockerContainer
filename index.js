@@ -9,7 +9,7 @@ const messageText =  require ('./module/text.js')
 const express = require('express')
 
 const app = express()
-sapp.get('/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.sendStatus(200)
 })
 
