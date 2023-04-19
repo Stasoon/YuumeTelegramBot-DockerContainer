@@ -1,28 +1,21 @@
 // подключаем Dotenv.
 require('dotenv').config();
-process.env.NTBA_FIX_319 = 1;
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
-
-
-// const express = require('express')
-// const app = express()
-// app.get('/health', (req, res) => {
-//   res.sendStatus(200)
-// })
 
 
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
 
+
 // дрес сервера, на котором хостится бот
-const SERVER_URL = process.env.SERVER_URL
+const SERVER_URL = `https://yuumetgbot.onrender.com`
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
-bot.setWebHook()
+const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000}, ip_address: '3.75.158.163' })
+bot.deleteWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 
@@ -255,6 +248,7 @@ bot.onText(/\/ADMINnamebutton/, async msg => {
     
 })
 
+bot.onText(/\/linkbutton/, async msg => {
 bot.onText(/\/ADMINlinkbutton/, async msg => {
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
 
@@ -306,6 +300,7 @@ bot.onText(/\/ADMINusers/, async msg => {
     const ChatId = msg.chat.id;
     const log = await User.find( { }, { ChatId: 1, _id: 0 } );
 
+    bot.sendMessage(ChatId, `Ботом воспользовалиось ${log.length} человек.`, {
     bot.sendMessage(ChatId, `Ботом воспользовались ${log.length} человек.`, {
         parse_mode: 'HTML',
     })
