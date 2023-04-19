@@ -1,3 +1,4 @@
+process.env.NTBA_FIX_319 = 1;
 // подключаем Dotenv.
 require('dotenv').config();
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
@@ -9,13 +10,12 @@ const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
 
-
 // дрес сервера, на котором хостится бот
 const SERVER_URL = `https://yuumetgbot.onrender.com`
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000}, ip_address: '3.75.158.163' })
-bot.deleteWebHook()
+const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
+bot.setWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 
