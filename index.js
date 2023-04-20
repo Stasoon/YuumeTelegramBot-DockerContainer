@@ -17,7 +17,7 @@ const User = require('./models/users') // экспорт модель базы �
 const SERVER_URL = `${process.env.SERVER_URL}`
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
+const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 80} })
 bot.setWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
