@@ -16,14 +16,5 @@
     "mongoose": "^7.0.4",
     "node-telegram-bot-api": "^0.61.0",
     "express": "^4.16.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alokozzay/telegrambot-zakaz.git"
-  },
-  "bugs": {
-    "url": "https://github.com/alokozzay/telegrambot-zakaz/issues"
-  },
-  "homepage": "https://github.com/alokozzay/telegrambot-zakaz#readme",
-  "description": ""
+  }
 }
