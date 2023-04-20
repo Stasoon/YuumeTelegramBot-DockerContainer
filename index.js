@@ -1,4 +1,4 @@
-// подключаем Dotenv.
+ // подключаем Dotenv.
 require('dotenv').config();
 const TelegramAPI = require('node-telegram-bot-api') // фреймворк для работы с API Telegram
 const keyboard =  require ('./module/keyboard')
@@ -11,7 +11,7 @@ const User = require('./models/users') // экспорт модель базы �
 
 
 // дрес сервера, на котором хостится бот
-const SERVER_URL = `https://yuumetgbot.onrender.com`
+const SERVER_URL = `${process.env.SERVER_URL}`
 
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000}, ip_address: '3.75.158.163' })
@@ -248,7 +248,6 @@ bot.onText(/\/ADMINnamebutton/, async msg => {
     
 })
 
-
 bot.onText(/\/ADMINlinkbutton/, async msg => {
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
 
@@ -301,6 +300,6 @@ bot.onText(/\/ADMINusers/, async msg => {
     const log = await User.find( { }, { ChatId: 1, _id: 0 } );
 
     bot.sendMessage(ChatId, `Ботом воспользовались ${log.length} человек.`, {
-        parse_mode: 'HTML',
+        parse_mode: 'HTML'
     })
 })
