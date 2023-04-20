@@ -5,6 +5,9 @@ const keyboard =  require ('./module/keyboard')
 const messageText =  require ('./module/text.js')
 
 
+console.log('------ СКРИПТ ЗАПУЩЕН ------')
+
+
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
