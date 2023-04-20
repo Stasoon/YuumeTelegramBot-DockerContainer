@@ -17,7 +17,6 @@ const SERVER_URL = `${process.env.SERVER_URL}`
 const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 3000} })
 bot.setWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
-console.log(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 
 // вспомогательная переменная для отправка фотографий.
