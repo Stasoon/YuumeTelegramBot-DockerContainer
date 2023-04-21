@@ -13,7 +13,7 @@ const User = require('./models/users') // экспорт модель базы �
 
 // дрес сервера, на котором хостится бот
 const SERVER_URL = `${process.env.SERVER_URL}`
-const TOKEN = process.env.TOKEN
+const TOKEN = process.env.KEY
 const PORT = process.env.PORT || 3000
 
 
@@ -319,6 +319,7 @@ app.get('/', (req, res) => {
 
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
+  console.log('Bot is ok!')
 });
 
 app.listen(PORT, () => {
