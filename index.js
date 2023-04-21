@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000
 
 
 const express = require("express");
-const axios = require('axios');
+// const axios = require('axios');
 const app = express()
 
 app.get('/', (req, res) => {
@@ -30,24 +30,24 @@ app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
-const init = () => {
-    const res = axios.get(`https://api.telegram.org/bot${TOKEN}/setWebhook?url=${SERVER_URL}/webhook/${process.env.KEY}`)
-    if (res.status == 200){
-        console.log('Webhook set')
-    }
-}
+// const init = () => {
+    // const res = axios.get(`https://api.telegram.org/bot${TOKEN}/setWebhook?url=${SERVER_URL}/webhook/${process.env.KEY}`)
+    // if (res.status == 200){
+        // console.log('Webhook set')
+    // }
+// }
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
-  init()
+  // init()
 });
 
 
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: PORT} })
-bot.setWebHook()
-bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
+const bot = new TelegramAPI(process.env.KEY, { polling: true }) //, webHook: {port: PORT}
+// bot.setWebHook()
+// bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
 
 // вспомогательная переменная для отправка фотографий.
