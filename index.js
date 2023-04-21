@@ -17,33 +17,6 @@ const TOKEN = process.env.TOKEN
 const PORT = process.env.PORT || 3000
 
 
-
-const express = require("express");
-// const axios = require('axios');
-const app = express()
-
-app.get('/', (req, res) => {
-  res.status(200).send('OK');
-});
-
-app.get('/health', (req, res) => {
-  res.status(200).send('OK');
-});
-
-// const init = () => {
-    // const res = axios.get(`https://api.telegram.org/bot${TOKEN}/setWebhook?url=${SERVER_URL}/webhook/${process.env.KEY}`)
-    // if (res.status == 200){
-        // console.log('Webhook set')
-    // }
-// }
-
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-  // init()
-});
-
-
-
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(process.env.KEY, { polling: true }) //, webHook: {port: PORT}
 // bot.setWebHook()
@@ -334,3 +307,21 @@ bot.onText(/\/ADMINusers/, async msg => {
         parse_mode: 'HTML'
     })
 })
+
+
+const express = require("express");
+// const axios = require('axios');
+const app = express()
+
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
+
