@@ -13,8 +13,9 @@ const User = require('./models/users') // экспорт модель базы �
 
 // дрес сервера, на котором хостится бот
 const SERVER_URL = `${process.env.SERVER_URL}`
-const TOKEN = process.env.KEY
+const TOKEN = process.env.BOT_TOKEN
 const PORT = process.env.PORT || 3000
+const DB_TOKEN = process.env.DB_TOKEN
 
 
 // бот для пользователей + привязка вебхука
@@ -32,7 +33,7 @@ let LinkButton = 'https://t.me/DakoUps'
 
 // подключение к базе данных, в случае ошибки выводим в консоль.
 mongoose
-    .connect(process.env.TOKENBD, {useNewUrlParser: true, useUnifiedTopology: true}) 
+    .connect(DB_TOKEN, {useNewUrlParser: true, useUnifiedTopology: true}) 
     .then((res) => console.log('Success! DB connected'))  // успех.
     .catch( err => console.log(err)); // ошибка.
 
