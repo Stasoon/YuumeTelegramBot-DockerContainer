@@ -13,13 +13,13 @@ const User = require('./models/users') // экспорт модель базы �
 
 // дрес сервера, на котором хостится бот
 const SERVER_URL = `${process.env.SERVER_URL}`
-const TOKEN = process.env.BOT_TOKEN
+const BOT_TOKEN = `${process.env.BOT_TOKEN}`
+const DB_TOKEN = `${process.env.DB_TOKEN}`
 const PORT = process.env.PORT || 3000
-const DB_TOKEN = process.env.DB_TOKEN
 
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: true }) //, webHook: {port: PORT}
+const bot = new TelegramAPI(BOT_TOKEN, { polling: true }) //, webHook: {port: PORT}
 // bot.setWebHook()
 // bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
