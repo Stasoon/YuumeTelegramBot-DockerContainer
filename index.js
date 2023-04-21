@@ -7,17 +7,36 @@ const messageText =  require ('./module/text.js')
 
 console.log('------ СКРИПТ ЗАПУЩЕН ------')
 
-
 const mongoose = require('mongoose') // база данных MongoDB
 const User = require('./models/users') // экспорт модель базы данных
 
 
-
 // дрес сервера, на котором хостится бот
 const SERVER_URL = `${process.env.SERVER_URL}`
+const TOKEN = process.env.TOKEN
+const PORT = process.env.PORT || 3000
+
+
+
+const express = require("express");
+const app = express()
+
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
+
+
 
 // бот для пользователей + привязка вебхука
-const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: 80} })
+const bot = new TelegramAPI(process.env.KEY, { polling: false, webHook: {port: PORT} })
 bot.setWebHook()
 bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
 
@@ -49,8 +68,8 @@ bot.onText(/\/start/, msg => {
     const users = new User({ChatId, UserName});
     users
         .save()
-        .then(res => console.log('User added'))
-        .catch(err => console.log('Error! Can not create user!!\n'+err))
+        .then(res => console.log(`User ${UserName} added`))
+        .catch(err => console.log(`Error! Can not create user ${UserName}!!\n`+err))
 
     bot.sendPhoto(ChatId, './src/start.jpg', {
         caption: `Добро пожаловать! ${UserName}
