@@ -32,8 +32,9 @@ app.get('/health', (req, res) => {
 
 const init = () => {
     const res = axios.get(`https://api.telegram.org/bot${TOKEN}/setWebhook?url=${SERVER_URL}/webhook/${process.env.KEY}`)
-    if (res.status == 200):
+    if (res.status == 200){
         console.log('Webhook set')
+    }
 }
 
 app.listen(PORT, () => {
