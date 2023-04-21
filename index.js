@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000
 // бот для пользователей + привязка вебхука
 const bot = new TelegramAPI(BOT_TOKEN, { polling: true }) //, webHook: {port: PORT}
 // bot.setWebHook()
-// bot.setWebHook(`${SERVER_URL}/webhook/${process.env.KEY}`)
+// bot.setWebHook(`${SERVER_URL}/webhook/${BOT_TOKEN}`)
 
 
 // вспомогательная переменная для отправка фотографий.
