@@ -1,6 +1,6 @@
 const registation_link = 'https://1wwxnj.top/?open=register'
 const chat_link = 'https://t.me/+qkRUSkRNSt82NzBi'
-const contact_link = 'https://t.me/DakoUps'
+const contact_link = 'https://t.me/Dakos777'
 
 const keyboard = {
     start: [
@@ -89,8 +89,7 @@ const keyboard = {
                 callback_data: 'account_created',  
             }
         ],
-    ],
-    
+    ]
 }
 
 module.exports = keyboard;

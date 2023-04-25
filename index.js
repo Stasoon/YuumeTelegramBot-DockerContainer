@@ -29,7 +29,7 @@ let iComm = 0;
 
 // переменные для хранения инфо о рассылке
 let NameButton = 'Кнопка'
-let LinkButton = 'https://t.me/DakoUps'
+let LinkButton = 'https://t.me/Dakos777'
 
 // подключение к базе данных, в случае ошибки выводим в консоль.
 mongoose
