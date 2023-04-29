@@ -140,7 +140,7 @@ bot.on('callback_query', query => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostphoto/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
 
@@ -180,7 +180,7 @@ bot.onText(/\/ADMINpostphoto/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostvideo/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
 
@@ -220,7 +220,7 @@ bot.onText(/\/ADMINpostvideo/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINposttext/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
 
@@ -252,7 +252,7 @@ bot.onText(/\/ADMINposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnamebutton/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
 
@@ -267,7 +267,7 @@ bot.onText(/\/ADMINnamebutton/, async msg => {
 })
 
 bot.onText(/\/ADMINlinkbutton/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
@@ -279,8 +279,9 @@ bot.onText(/\/ADMINlinkbutton/, async msg => {
     })
 })
 
+
 bot.onText(/\/ADMINnbtnposttext/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
     // переменная для хранение текста, который мы будем отправлять.
@@ -299,7 +300,7 @@ bot.onText(/\/ADMINnbtnposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
     // переменная для хранение текста, который мы будем отправлять.
@@ -321,11 +322,7 @@ bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
 
 bot.onText(/\/ADMINusers/, async msg => {
-    console.log(msg.from.username)
-    console.log(msg.from.username !== "stascsa")
-    console.log(msg.from.username === "stascsa")
-    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
-        console.log('не да')
+    if (msg.from.username !== "yumme1" && msg.from.username !== "stascsa"){
         return
     }
     
