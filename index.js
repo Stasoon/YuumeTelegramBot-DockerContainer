@@ -140,7 +140,7 @@ bot.on('callback_query', query => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostphoto/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
 
@@ -180,7 +180,7 @@ bot.onText(/\/ADMINpostphoto/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostvideo/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
 
@@ -322,9 +322,15 @@ bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
 bot.onText(/\/ADMINusers/, async msg => {
     console.log(msg.from.username)
+    console.log(msg.from.username !== "stascsa")
+    console.log(msg.from.username === "stascsa")
     if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
+        console.log('не да')
         return
     }
+    
+    console.log('да')
+
     const ChatId = msg.chat.id;
     const log = await User.find( { }, { ChatId: 1, _id: 0 } );
 
