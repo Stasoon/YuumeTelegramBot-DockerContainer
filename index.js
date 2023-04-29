@@ -321,6 +321,7 @@ bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
 
 bot.onText(/\/ADMINusers/, async msg => {
+    console.log(msg.from.username)
     if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
         return
     }
