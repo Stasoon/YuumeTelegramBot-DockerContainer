@@ -140,6 +140,9 @@ bot.on('callback_query', query => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostphoto/, async msg => {
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
 
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
@@ -177,6 +180,9 @@ bot.onText(/\/ADMINpostphoto/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINpostvideo/, async msg => {
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
 
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
@@ -214,7 +220,10 @@ bot.onText(/\/ADMINpostvideo/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINposttext/, async msg => {
-    
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
+
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(1).join(" ");
 
@@ -243,6 +252,10 @@ bot.onText(/\/ADMINposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnamebutton/, async msg => {
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
+
     NameButton = msg.text.split(" ").slice(1,2).join(" ");
     
     const ChatId = msg.chat.id;
@@ -254,6 +267,9 @@ bot.onText(/\/ADMINnamebutton/, async msg => {
 })
 
 bot.onText(/\/ADMINlinkbutton/, async msg => {
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
 
     const ChatId = msg.chat.id;
@@ -264,7 +280,9 @@ bot.onText(/\/ADMINlinkbutton/, async msg => {
 })
 
 bot.onText(/\/ADMINnbtnposttext/, async msg => {
-    
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(1).join(" ");
 
@@ -281,7 +299,9 @@ bot.onText(/\/ADMINnbtnposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
-
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
     // переменная для хранение текста, который мы будем отправлять.
     const sendText = msg.text.split(" ").slice(2).join(" "); 
 
@@ -301,6 +321,9 @@ bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
 
 bot.onText(/\/ADMINusers/, async msg => {
+    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+        return
+    }
     const ChatId = msg.chat.id;
     const log = await User.find( { }, { ChatId: 1, _id: 0 } );
 
