@@ -220,7 +220,7 @@ bot.onText(/\/ADMINpostvideo/, async msg => {
 // затем собираем список юзеров с базы данных и отправляем сообщение
 
 bot.onText(/\/ADMINposttext/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
 
@@ -252,7 +252,7 @@ bot.onText(/\/ADMINposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnamebutton/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
 
@@ -267,7 +267,7 @@ bot.onText(/\/ADMINnamebutton/, async msg => {
 })
 
 bot.onText(/\/ADMINlinkbutton/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
     LinkButton = msg.text.split(" ").slice(1,2).join(" ");
@@ -280,7 +280,7 @@ bot.onText(/\/ADMINlinkbutton/, async msg => {
 })
 
 bot.onText(/\/ADMINnbtnposttext/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
     // переменная для хранение текста, который мы будем отправлять.
@@ -299,7 +299,7 @@ bot.onText(/\/ADMINnbtnposttext/, async msg => {
 })
 
 bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
     // переменная для хранение текста, который мы будем отправлять.
@@ -322,7 +322,7 @@ bot.onText(/\/ADMINnbtnpostphoto/, async msg => {
 
 bot.onText(/\/ADMINusers/, async msg => {
     console.log(msg.from.username)
-    if (msg.from.username != 'yumme1'  && msg.from.id != 'stascsa'){
+    if (msg.from.username !== "yumme1"  && msg.from.id !== "stascsa"){
         return
     }
     const ChatId = msg.chat.id;
